@@ -24,6 +24,24 @@ const comment_Page = ()=>{
        
 
         console.log(data)
+        hanleClicl();
+       
+    }
+    // const deleteComment = async (commentid)=>{
+    //     const response = await fetch(`/api/comments/${commentid}`,{
+    //         method : 'DELETE',
+    //     })
+    //     const data = await response.json()
+    //     console.log(data);
+    //     hanleClicl();    
+    // }
+    const deleteComment = async (commentid) =>{
+        const response = await fetch(`/api/comments/${commentid}` ,{
+            method :'DELETE'
+        })
+        const data = await response.json()
+        console.log(data)
+        hanleClicl()
     }
 
     return (
@@ -35,6 +53,7 @@ const comment_Page = ()=>{
                 {comment.map(comment => (
                     <div key={comment.id}>
                         <p>{comment.comment}</p>
+                        <button onClick={()=>{deleteComment(comment.id)}}>Delete Comment</button>
                     </div>
                 ))}
             </div>
