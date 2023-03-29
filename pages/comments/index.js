@@ -27,14 +27,7 @@ const comment_Page = ()=>{
         hanleClicl();
        
     }
-    // const deleteComment = async (commentid)=>{
-    //     const response = await fetch(`/api/comments/${commentid}`,{
-    //         method : 'DELETE',
-    //     })
-    //     const data = await response.json()
-    //     console.log(data);
-    //     hanleClicl();    
-    // }
+    
     const deleteComment = async (commentid) =>{
         const response = await fetch(`/api/comments/${commentid}` ,{
             method :'DELETE'
